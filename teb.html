@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tab</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <style>
+  	body{margin:0;padding: 0; background-color: aliceblue;}
+  	
+
+    .tab-container{
+      border: 1px solid #cccccc;
+      display: flex;
+      padding: 0;
+    }
+    .button-container{width: 100%;}
+    .tab-container{
+     
+      flex-shrink: 0;
+      background: #cccccc;
+    }
+    .tab__button{
+      display: block;
+      padding: 10px;
+      background: #eeeeee;
+      border: none;
+      width: 100%;
+      outline: none;
+      cursor: pointer;
+    }
+    .tab__button:active{
+      background: #dddddd;
+    }
+    .tab__button:not(:last-of-type){
+      border-bottom: 1px solid #cccccc;
+    }
+    .active{
+      font-weight: bold;
+      border-right: 2px solid #009879;
+      background: #dddddd;
+    }
+    .tab-content{
+      height: 285px;
+      display: none;
+      font-size: 20px;
+    }
+    .tab__content--active{
+      display: block;
+      margin-top: 10px;
+    }
+    .tab__content > :first-child{
+      margin-top: 0;
+
+    }
+
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+
+<div class="container-fluid">
+    <div class="tab-container col-sm-2">
+        <div class="button-container ">
+          <button class="tab__button active" data-for-tab="one">Geo Targeting</button>
+          <button class="tab__button " data-for-tab="two">Device & Platforms</button>
+          <button class="tab__button " data-for-tab="three">Browser</button>
+          <button class="tab__button " data-for-tab="four">Network/Carrier</button>
+          <button class="tab__button " data-for-tab="five">IP Filters</button>
+          <button class="tab__button " data-for-tab="six">Trafic Conditions</button>
+          <button class="tab__button " data-for-tab="seven">Demografic</button>
+        </div>
+      </div>
+      
+        <div id="one" class="tab-content Geo tabpanel col-sm-10 tab__content--active" >
+          <h1>Geo Targeting Geo</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, magni. Unde voluptatem temporibus dicta! Vero cupiditate iusto reiciendis ducimus obcaecati voluptatem labore hic, fugit saepe cum nulla dignissimos alias non?</p>
+        </div>
+        <div id="two" class="tab-content Device tabpanel col-sm-10" o>   <h1>Device & Platforms</h1>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores architecto porro, id possimus reprehenderit corrupti fugiat numquam soluta maiores excepturi, doloremque accusamus. Velit laboriosam delectus, pariatur eveniet cupiditate saepe repellendus.</p>
+        </div>
+        <div id="three" class="tab-content Browser tabpanel col-sm-10" >   <h1>Browser</h1>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum labore veniam quisquam eaque eveniet debitis similique, tenetur corrupti asperiores eos mollitia quia, id sit nobis consectetur magni alias, quasi quibusdam.</p>
+        </div>
+        <div id="four" class="tab-content Network tabpanel col-sm-10" >Network/Carrier Network/Carrier Network/Carrier Network/Carrier Network/Carrier Network/Carrier </div>
+        <div id="five" class="tab-content IP tabpanel col-sm-10" >
+          <h1>IP Filters</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est aliquid quis impedit veritatis laboriosam odio, facere qui ab excepturi, cum voluptate nemo quam atque necessitatibus rerum fugit quae repellendus ut.</p>
+        </div>
+        <div id="six" class="tab-content Trafic tabpanel col-sm-10" >
+          <h1>Trafic Conditions</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia laborum excepturi qui quae. Repudiandae laborum quia, labore minima veritatis magnam sit temporibus dolor maxime ratione, obcaecati ducimus, est. Ipsum, eius.</p>
+        </div>
+        <div id="seven" class="tab-content Demografic tabpanel col-sm-10">
+          <h1>Demografic</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem assumenda aut impedit expedita nesciunt rerum ab, blanditiis, ullam, commodi consequatur itaque soluta earum, eius corporis voluptas dignissimos sit consequuntur nobis.</p>
+        </div>
+      
+</div>
+
+
+
+</div>
+<div class="a-footer">© <a href="#">GREATCPAOFFEERS</a> Demo | System Time: 2020-02-15 17:43:07
+
+
+<script type="text/javascript"> 
+
+  $(document).on('click','.button-container>button',function(){
+    var id = $(this).attr('data-for-tab');
+    console.log(id);
+    $('div#'+id+'').fadeIn('slow');
+    $('.tab-content:not(#'+id+')').hide();
+    $(this).addClass('active');
+    $(this).siblings('button').removeClass('active');
+
+  });
+
+
+
+</script>
+</div>
+
+</body>
+</html>
